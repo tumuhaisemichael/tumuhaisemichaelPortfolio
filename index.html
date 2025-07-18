@@ -1,0 +1,902 @@
+undefined<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Full Stack Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#1e40af'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Modern%20professional%20software%20engineer%20workspace%20with%20clean%20minimalist%20design%2C%20elegant%20computer%20setup%2C%20soft%20natural%20lighting%2C%20contemporary%20office%20environment%2C%20subtle%20technology%20elements%2C%20professional%20atmosphere%2C%20clean%20white%20and%20blue%20tones%2C%20sophisticated%20workspace%20aesthetic%2C%20modern%20furniture%2C%20organized%20desk%20setup%2C%20inspiring%20work%20environment&width=1920&height=1080&seq=hero001&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(30, 64, 175, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-['Pacifico'] text-primary">Alex Johnson</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary transition-colors">
+                        <i class="ri-sun-line ri-lg"></i>
+                    </button>
+                    <button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap">
+                        Download Resume
+                    </button>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700">Home</a>
+                <a href="#about" class="block py-2 text-gray-700">About</a>
+                <a href="#projects" class="block py-2 text-gray-700">Projects</a>
+                <a href="#skills" class="block py-2 text-gray-700">Skills</a>
+                <a href="#experience" class="block py-2 text-gray-700">Experience</a>
+                <a href="#contact" class="block py-2 text-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg min-h-screen flex items-center relative">
+        <div class="gradient-overlay absolute inset-0"></div>
+        <div class="relative z-10 w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-white">
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+                            Full Stack<br>
+                            <span class="text-yellow-300">Software Engineer</span>
+                        </h1>
+                        <p class="text-xl mb-8 text-blue-100">
+                            Crafting innovative digital solutions with modern technologies. 
+                            Passionate about creating scalable applications that make a difference.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <button class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+                                View My Work
+                            </button>
+                            <button class="border-2 border-white text-white px-8 py-3 !rounded-button font-semibold hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
+                                Get In Touch
+                            </button>
+                        </div>
+                        <div class="flex space-x-6">
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm !rounded-button text-white hover:bg-white hover:text-primary transition-colors">
+                                <i class="ri-github-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm !rounded-button text-white hover:bg-white hover:text-primary transition-colors">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm !rounded-button text-white hover:bg-white hover:text-primary transition-colors">
+                                <i class="ri-twitter-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block">
+                        <div class="relative">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20software%20engineer%20portrait%2C%20confident%20young%20developer%2C%20modern%20business%20casual%20attire%2C%20clean%20studio%20lighting%2C%20professional%20headshot%20style%2C%20friendly%20approachable%20expression%2C%20technology%20background%20elements%2C%20high%20quality%20professional%20photography%2C%20contemporary%20style&width=500&height=600&seq=profile001&orientation=portrait" 
+                                 alt="Alex Johnson" 
+                                 class="w-full max-w-md mx-auto rounded-2xl shadow-2xl object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Passionate full-stack developer with 5+ years of experience building scalable web applications
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Professional Summary</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a dedicated full-stack software engineer with a passion for creating innovative digital solutions. 
+                        My expertise spans across modern web technologies, from React and Node.js to cloud infrastructure and DevOps practices.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        I believe in writing clean, maintainable code and following best practices to deliver high-quality software 
+                        that not only meets business requirements but also provides exceptional user experiences.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Education</h4>
+                            <p class="text-gray-600">B.S. Computer Science</p>
+                            <p class="text-gray-500 text-sm">Stanford University</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Location</h4>
+                            <p class="text-gray-600">San Francisco, CA</p>
+                            <p class="text-gray-500 text-sm">Open to Remote</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Core Values</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-lightbulb-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Innovation</h4>
+                                <p class="text-gray-600 text-sm">Always exploring new technologies and approaches</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-team-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Collaboration</h4>
+                                <p class="text-gray-600 text-sm">Strong believer in teamwork and knowledge sharing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-trophy-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Excellence</h4>
+                                <p class="text-gray-600 text-sm">Committed to delivering high-quality solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
+                <p class="text-xl text-gray-600">Technologies I work with to bring ideas to life</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg mb-4">
+                        <i class="ri-code-s-slash-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">React</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">TypeScript</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Next.js</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Tailwind CSS</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 rounded-lg mb-4">
+                        <i class="ri-server-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Backend</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Node.js</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Python</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Express.js</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">GraphQL</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg mb-4">
+                        <i class="ri-database-2-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Database</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">PostgreSQL</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">MongoDB</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Redis</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">MySQL</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-100 text-orange-600 rounded-lg mb-4">
+                        <i class="ri-cloud-line ri-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">DevOps & Cloud</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">AWS</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Docker</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Kubernetes</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">CI/CD</span>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600">Some of my recent work that I'm proud of</p>
+            </div>
+            <div class="mb-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="project-filter-btn bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap" data-filter="all">All Projects</button>
+                    <button class="project-filter-btn bg-gray-200 text-gray-700 px-6 py-2 !rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="web">Web Apps</button>
+                    <button class="project-filter-btn bg-gray-200 text-gray-700 px-6 py-2 !rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="mobile">Mobile</button>
+                    <button class="project-filter-btn bg-gray-200 text-gray-700 px-6 py-2 !rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="api">APIs</button>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="web">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20e-commerce%20web%20application%20interface%2C%20clean%20product%20showcase%20design%2C%20professional%20shopping%20cart%20layout%2C%20contemporary%20user%20interface%2C%20sleek%20product%20grid%2C%20modern%20web%20design%20aesthetic%2C%20responsive%20layout%2C%20elegant%20product%20cards%2C%20sophisticated%20ecommerce%20platform&width=400&height=300&seq=project001&orientation=landscape" 
+                             alt="E-commerce Platform" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Live</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Full-stack e-commerce solution with React, Node.js, and Stripe integration</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MongoDB</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Stripe</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-external-link-line"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="web">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20task%20management%20dashboard%20interface%2C%20clean%20project%20management%20layout%2C%20contemporary%20productivity%20app%20design%2C%20organized%20task%20board%2C%20sleek%20kanban%20interface%2C%20professional%20project%20tracking%20system%2C%20modern%20web%20application%20design&width=400&height=300&seq=project002&orientation=landscape" 
+                             alt="Task Management App" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Collaborative project management tool with real-time updates and team features</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">TypeScript</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Socket.io</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-external-link-line"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="mobile">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20mobile%20fitness%20tracking%20app%20interface%2C%20clean%20health%20dashboard%20design%2C%20contemporary%20workout%20tracking%20layout%2C%20sleek%20fitness%20application%2C%20professional%20health%20monitoring%20interface%2C%20modern%20mobile%20app%20design%2C%20elegant%20fitness%20tracker&width=400&height=300&seq=project003&orientation=landscape" 
+                             alt="Fitness Tracker App" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Live</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Fitness Tracker Mobile App</h3>
+                        <p class="text-gray-600 mb-4">Cross-platform mobile app for tracking workouts and health metrics</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React Native</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Expo</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Redux</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-smartphone-line"></i>
+                                <span>App Store</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="api">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20API%20documentation%20interface%2C%20clean%20developer%20tools%20design%2C%20contemporary%20REST%20API%20dashboard%2C%20professional%20API%20management%20platform%2C%20sleek%20endpoint%20documentation%2C%20technical%20interface%20design%2C%20developer-friendly%20layout&width=400&height=300&seq=project004&orientation=landscape" 
+                             alt="RESTful API" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Live</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">RESTful API Service</h3>
+                        <p class="text-gray-600 mb-4">Scalable microservices architecture with comprehensive documentation</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Docker</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">AWS</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-book-line"></i>
+                                <span>Documentation</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="web">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20data%20analytics%20dashboard%20interface%2C%20clean%20business%20intelligence%20layout%2C%20contemporary%20data%20visualization%20design%2C%20professional%20analytics%20platform%2C%20sleek%20chart%20interface%2C%20modern%20reporting%20dashboard%2C%20elegant%20data%20presentation&width=400&height=300&seq=project005&orientation=landscape" 
+                             alt="Analytics Dashboard" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium">Beta</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Real-time data visualization platform with interactive charts and reports</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">D3.js</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">FastAPI</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-external-link-line"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="web">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%20social%20media%20platform%20interface%2C%20clean%20social%20networking%20design%2C%20contemporary%20community%20platform%20layout%2C%20professional%20social%20app%20interface%2C%20sleek%20user%20interaction%20design%2C%20modern%20social%20dashboard%2C%20elegant%20community%20features&width=400&height=300&seq=project006&orientation=landscape" 
+                             alt="Social Platform" 
+                             class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Social Media Platform</h3>
+                        <p class="text-gray-600 mb-4">Community-driven platform with real-time messaging and content sharing</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">GraphQL</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Apollo</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Redis</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors">
+                                <i class="ri-external-link-line"></i>
+                                <span>Preview</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+                                <i class="ri-github-line"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <p class="text-xl text-gray-600">My journey as a software engineer</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full"></div>
+                <div class="space-y-12">
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <div class="flex items-center justify-end space-x-3 mb-3">
+                                    <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg">
+                                        <i class="ri-building-line text-blue-600"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold">TechCorp Solutions</h3>
+                                </div>
+                                <h4 class="text-lg font-semibold text-primary mb-2">Senior Full Stack Developer</h4>
+                                <p class="text-gray-500 mb-3">2022 - Present</p>
+                                <p class="text-gray-600 mb-4">
+                                    Leading development of enterprise-scale web applications, mentoring junior developers, 
+                                    and architecting scalable solutions using modern technologies.
+                                </p>
+                                <div class="flex flex-wrap justify-end gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-lg">
+                                        <i class="ri-rocket-line text-green-600"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold">StartupXYZ</h3>
+                                </div>
+                                <h4 class="text-lg font-semibold text-primary mb-2">Full Stack Developer</h4>
+                                <p class="text-gray-500 mb-3">2020 - 2022</p>
+                                <p class="text-gray-600 mb-4">
+                                    Built and maintained multiple web applications from scratch, implemented CI/CD pipelines, 
+                                    and collaborated with cross-functional teams in an agile environment.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Vue.js</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Python</span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                                <div class="flex items-center justify-end space-x-3 mb-3">
+                                    <div class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-lg">
+                                        <i class="ri-code-line text-orange-600"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold">WebDev Agency</h3>
+                                </div>
+                                <h4 class="text-lg font-semibold text-primary mb-2">Junior Developer</h4>
+                                <p class="text-gray-500 mb-3">2019 - 2020</p>
+                                <p class="text-gray-600 mb-4">
+                                    Developed responsive websites and web applications for various clients, 
+                                    gained experience in frontend and backend technologies.
+                                </p>
+                                <div class="flex flex-wrap justify-end gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">JavaScript</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">PHP</span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">Let's discuss your next project or opportunity</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-mail-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">alex.johnson@email.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-phone-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-lg">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 rounded-lg">
+                                <i class="ri-time-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Availability</h4>
+                                <p class="text-gray-600">Available for new projects</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-lg hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                                <i class="ri-github-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-lg hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-lg hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                                <i class="ri-twitter-fill ri-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <form id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Project Inquiry">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 px-6 !rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <span class="text-2xl font-['Pacifico'] text-primary">Alex Johnson</span>
+                    <p class="text-gray-400 mt-4">
+                        Full Stack Software Engineer passionate about creating innovative digital solutions.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
+                        <a href="#experience" class="block text-gray-400 hover:text-white transition-colors">Experience</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Alex Johnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-secondary transition-colors hidden">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <script id="theme-toggle-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+            
+            themeToggle.addEventListener('click', function() {
+                if (icon.classList.contains('ri-sun-line')) {
+                    icon.classList.remove('ri-sun-line');
+                    icon.classList.add('ri-moon-line');
+                } else {
+                    icon.classList.remove('ri-moon-line');
+                    icon.classList.add('ri-sun-line');
+                }
+            });
+        });
+    </script>
+
+    <script id="project-filter-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-white');
+                        b.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    this.classList.add('bg-primary', 'text-white');
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('hidden');
+                } else {
+                    backToTopBtn.classList.add('hidden');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I\'ll get back to you soon.');
+            });
+        });
+    </script>
+</body>
+</html>
