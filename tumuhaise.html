@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUMUHAISE MICHAEL ANOLD - Software Engineer</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #8DC63F;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f3f5;
+        }
+        
+        .container {
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            margin-top: 5px;
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            padding: 20px 30px;
+        }
+        
+        .summary {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--gray);
+        }
+        
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .position {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-item {
+            margin-bottom: 10px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .references {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .reference {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .project-tech {
+            margin-top: 5px;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TUMUHAISE MICHAEL</h1>
+            <div class="subtitle">Software Engineer</div>
+            <div class="contact-info">
+                <div class="contact-item">📍 Kampala, Uganda</div>
+                <div class="contact-item">📞 +256 782711856 / +256 759909831</div>
+                <div class="contact-item">✉️ michaeltumuhaise11@gmail.com</div>
+                <div class="contact-item">🔗 https://github.com/tumuhaisemichael</div>
+            </div>
+        </header>
+        
+        <div class="section">
+            <div class="summary">
+                <h2>PROFESSIONAL SUMMARY</h2>
+                <p>I'm an innovative and multidisciplinary Software Engineer with a Bachelor's degree in Software Engineering from Makerere University. I have hands-on experience in full-stack development, mobile app creation, IoT systems, embedded devices, and AI/ML deployment. I'm currently working as a Web Developer at Afrisoft and WildMed Safaris, where I contribute to building powerful and user-centric digital solutions.</p>
+                <p>I've developed cross-platform applications, real-time energy monitoring systems, and agricultural intelligence platforms that solve real-world problems. I'm skilled in technologies like React, Django, Flutter, Laravel, FastAPI, Firebase, Supabase, and more. Alongside my software engineering skills, I have a strong foundation in digital marketing and SEO, which helps me build products that not only work but also reach and impact users effectively. I thrive on turning ideas into practical solutions across industries like healthcare, education, agriculture, e-commerce, and tourism.</p>
+            </div>
+            
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Software Engineering</h3>
+                <div class="date">Makerere University, Uganda | 2021 – 2025 (Completed)</div>
+            </div>
+            <div class="education-item">
+                <h3>Diploma in Computer Science</h3>
+                <div class="date">Makerere University Business School | 2018 – 2020</div>
+            </div>
+            
+            <h2>WORK EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">Afrisoft</h3>
+                    <div class="date">2024 – Present</div>
+                </div>
+                <div class="position">Web Developer</div>
+                <ul>
+                    <li>Lead frontend/backend development of scalable apps</li>
+                    <li>Integrated real-time APIs and deployed cross-platform systems</li>
+                    <li>Worked with Django, Laravel, and React-based solutions</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">WildMed Safaris</h3>
+                    <div class="date">2024 – Present</div>
+                </div>
+                <div class="position">Web Developer</div>
+                <ul>
+                    <li>Designed and maintained tourism platforms</li>
+                    <li>Managed SEO and digital marketing campaigns, improving online visibility</li>
+                    <li>Developed user-focused web solutions for booking and client engagement</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">Tattuintel Ltd</h3>
+                    <div class="date">2023 – 2024</div>
+                </div>
+                <div class="position">Software Developer</div>
+                <ul>
+                    <li>Built and deployed high-impact mobile and web solutions</li>
+                    <li>Collaborated on ML-driven logistics and wedding planning apps</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">National Information Technology Authority Uganda (NITA-U)</h3>
+                </div>
+                <div class="position">Intern</div>
+                <ul>
+                    <li>Created intelligent chatbots, internal dashboards, and automation tools</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">National Agricultural Research Organization (NARO)</h3>
+                </div>
+                <div class="position">Intern</div>
+                <ul>
+                    <li>Performed software installations and provided technical support</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">Kagoma Tech</h3>
+                </div>
+                <div class="position">IT Officer</div>
+                <ul>
+                    <li>Delivered IT support, system maintenance, and networking services</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <h3 class="company">Excel High School</h3>
+                </div>
+                <div class="position">Volunteer</div>
+                <ul>
+                    <li>Set up IT infrastructure and supported systems management</li>
+                </ul>
+            </div>
+            
+            <h2>PROJECTS</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🚀 Op Energy</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">IoT</span>
+                </div>
+                <ul>
+                    <li>Energy usage monitoring system for households</li>
+                    <li>Converts money to Yaka units and vice versa; controls sockets remotely</li>
+                    <li>Physical embedded device placed at sockets; app connects to it via API</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🌱 Smart Farming System</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">Embedded</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Sensors</span>
+                </div>
+                <ul>
+                    <li>IoT-based device collects soil data (pH, moisture, nutrients)</li>
+                    <li>Advises farmers on what crops to grow and manure to apply</li>
+                    <li>Live data dashboard for agricultural insights</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🚌 RouteWise</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">Supabase</span>
+                </div>
+                <ul>
+                    <li>School shuttle tracking with ML for route optimization</li>
+                    <li>Displays live traffic, weather, and crash data using external APIs</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">💍 WonderWedding</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Firebase</span>
+                </div>
+                <ul>
+                    <li>Mobile app for complete wedding planning</li>
+                    <li>Manages budgets, guest lists, schedules, and vendors</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🛒 TheShop</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">React</span>
+                    <span class="tag">FastAPI</span>
+                </div>
+                <ul>
+                    <li>Full-featured e-commerce platform inspired by Jumia & Amazon</li>
+                    <li>Features cart, checkout, admin panel, and recommendation engine</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">💬 Various Chatbots</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">Python</span>
+                    <span class="tag">Dialogflow</span>
+                </div>
+                <ul>
+                    <li>Customer service bots for education, business, and info services</li>
+                    <li>Integrated into websites and apps for automation</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🧑‍⚕️ Matendo Medical System</h3>
+                </div>
+                <div class="project-tech">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                <ul>
+                    <li>Connects patients with health workers and stores personal medical data</li>
+                    <li>Secured system for consultations and digital health records</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 class="project-title">🌐 Websites & Portals</h3>
+                </div>
+                <ul>
+                    <li>Developed custom websites for educational institutions, NGOs, startups, and tourism firms using Laravel, WordPress, and React</li>
+                </ul>
+            </div>
+            
+            <h2>TECHNICAL SKILLS</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-item"><span class="skill-name">JavaScript</span></div>
+                    <div class="skill-item"><span class="skill-name">Python</span></div>
+                    <div class="skill-item"><span class="skill-name">Java</span></div>
+                    <div class="skill-item"><span class="skill-name">PHP</span></div>
+                    <div class="skill-item"><span class="skill-name">Dart</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frameworks/Libraries</h3>
+                    <div class="skill-item"><span class="skill-name">React</span></div>
+                    <div class="skill-item"><span class="skill-name">React Native</span></div>
+                    <div class="skill-item"><span class="skill-name">Flutter</span></div>
+                    <div class="skill-item"><span class="skill-name">Django</span></div>
+                    <div class="skill-item"><span class="skill-name">Laravel</span></div>
+                    <div class="skill-item"><span class="skill-name">FastAPI</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-item"><span class="skill-name">PostgreSQL</span></div>
+                    <div class="skill-item"><span class="skill-name">MySQL</span></div>
+                    <div class="skill-item"><span class="skill-name">Firebase</span></div>
+                    <div class="skill-item"><span class="skill-name">Supabase</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps/Tools</h3>
+                    <div class="skill-item"><span class="skill-name">Docker</span></div>
+                    <div class="skill-item"><span class="skill-name">Git</span></div>
+                    <div class="skill-item"><span class="skill-name">REST APIs</span></div>
+                    <div class="skill-item"><span class="skill-name">Supabase</span></div>
+                    <div class="skill-item"><span class="skill-name">cPanel</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Embedded Systems</h3>
+                    <div class="skill-item"><span class="skill-name">IoT integration with sensors for smart agriculture and energy monitoring</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>AI/ML</h3>
+                    <div class="skill-item"><span class="skill-name">TensorFlow</span></div>
+                    <div class="skill-item"><span class="skill-name">Scikit-learn</span></div>
+                    <div class="skill-item"><span class="skill-name">ML model deployment</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Digital Marketing</h3>
+                    <div class="skill-item"><span class="skill-name">SEO</span></div>
+                    <div class="skill-item"><span class="skill-name">Keyword optimization</span></div>
+                    <div class="skill-item"><span class="skill-name">Google Search Console</span></div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Others</h3>
+                    <div class="skill-item"><span class="skill-name">Web hosting</span></div>
+                    <div class="skill-item"><span class="skill-name">Chatbot development</span></div>
+                    <div class="skill-item"><span class="skill-name">Cloud deployment</span></div>
+                </div>
+            </div>
+            
+            <h2>REFERENCES</h2>
+            <div class="references">
+                <div class="reference">
+                    <h3>Rweju M Julian</h3>
+                    <p>Manager, E-Government Services, NITA-U</p>
+                    <p>📞 +256 772 428292</p>
+                </div>
+                <div class="reference">
+                    <h3>Masserejje Mark Nathan</h3>
+                    <p>System Developer, NITA-U</p>
+                    <p>📞 +256 774 427036</p>
+                </div>
+                <div class="reference">
+                    <h3>Mr. Agatu Nathan</h3>
+                    <p>Manager, Kagoma Tech</p>
+                    <p>📞 +256 775 781157</p>
+                </div>
+                <div class="reference">
+                    <h3>Ms. Bukenya Sophia</h3>
+                    <p>Lecturer, Makerere University Business School</p>
+                    <p>📞 +256 777 229478</p>
+                </div>
+            </div>
+            
+<h2>GITHUB & PORTFOLIO</h2>
+<ul>
+    <li>GitHub: <a href="https://github.com/tumuhaisemichael">https://github.com/tumuhaisemichael</a></li>
+    <li>Portfolio: <a href="https://tumuhaisemichaelportfolio.onrender.com/">https://tumuhaisemichaelportfolio.onrender.com/</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/tumuhaise-michael-225515352/">https://www.linkedin.com/in/tumuhaise-michael-225515352/</a></li>
+</ul>
+
+        </div>
+    </div>
+</body>
+</html>
