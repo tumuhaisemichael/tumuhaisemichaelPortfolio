@@ -10,11 +10,12 @@ undefined<!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
         html { scroll-behavior: smooth; }
         .hero-bg {
-            background-image: url('https://readdy.ai/api/search-image?query=Modern%20professional%20software%20engineer%20workspace%20with%20clean%20minimalist%20design%2C%20elegant%20computer%20setup%2C%20soft%20natural%20lighting%2C%20contemporary%20office%20environment%2C%20subtle%20technology%20elements%2C%20professional%20atmosphere%2C%20clean%20white%20and%20blue%20tones%2C%20sophisticated%20workspace%20aesthetic%2C%20modern%20furniture%2C%20organized%20desk%20setup%2C%20inspiring%20work%20environment&width=1920&height=1080&seq=hero001&orientation=landscape');
+            background-image: url('images/image-8.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -40,7 +41,9 @@ undefined<!DOCTYPE html>
                     <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                  
+                  <button id="download-resume-btn" class="hidden md:flex bg-primary text-white px-4 py-2 !rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap">
+    Download Resume
+</button>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
                     <i class="ri-menu-line ri-lg"></i>
@@ -59,7 +62,8 @@ undefined<!DOCTYPE html>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg min-h-screen flex items-center relative">
+    <main id="printable-area">
+        <section id="home" class="hero-bg min-h-screen flex items-center relative">
         <div class="gradient-overlay absolute inset-0"></div>
         <div class="relative z-10 w-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1079,7 +1083,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
             </div>
         </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1207,6 +1212,113 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 alert('Thank you for your message! I\'ll get back to you soon.');
             });
+        });
+    </script>
+
+    <script>
+        document.getElementById('download-resume-btn').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+
+            const downloadBtn = document.getElementById('download-resume-btn');
+            const originalText = downloadBtn.textContent;
+            downloadBtn.textContent = 'Generating...';
+            downloadBtn.disabled = true;
+
+            try {
+                // --- Start of text extraction ---
+                let y = 15; // Initial y position
+                const margin = 15;
+                const maxWidth = 180;
+
+                function addText(text, size, isBold) {
+                    if (!text) return;
+                    if (y > 280) { // Check if new page is needed
+                        pdf.addPage();
+                        y = 15;
+                    }
+                    pdf.setFontSize(size);
+                    pdf.setFont(undefined, isBold ? 'bold' : 'normal');
+                    const lines = pdf.splitTextToSize(text, maxWidth);
+                    pdf.text(lines, margin, y);
+                    y += (lines.length * (size / 2.5)) + 2; // Adjust y position
+                }
+
+                addText('Michael Tumuhaise - Full Stack Software Engineer', 22, true);
+                y += 5;
+
+                // About Me
+                const aboutText = document.querySelector('#about p.text-xl').textContent.trim();
+                addText('About Me', 16, true);
+                addText(aboutText, 12, false);
+                y += 5;
+
+                // Skills
+                addText('Skills & Technologies', 16, true);
+                const skills = document.querySelectorAll('#skills .bg-white');
+                skills.forEach(skillCard => {
+                    const title = skillCard.querySelector('h3').textContent.trim();
+                    addText(title, 12, true);
+                    const skillItems = skillCard.querySelectorAll('span.text-gray-700');
+                    let skillsList = [];
+                    skillItems.forEach(item => {
+                        skillsList.push(item.textContent.trim());
+                    });
+                    addText(skillsList.join(', '), 10, false);
+                });
+                y += 5;
+
+                // Projects
+                addText('Featured Projects', 16, true);
+                const projects = document.querySelectorAll('#projects .project-card');
+                projects.forEach(project => {
+                    const title = project.querySelector('h3').textContent.trim();
+                    const desc = project.querySelector('p').textContent.trim();
+                    const techs = Array.from(project.querySelectorAll('.flex-wrap.gap-2 span')).map(s => s.textContent.trim()).join(', ');
+                    addText(title, 12, true);
+                    addText(desc, 10, false);
+                    if (techs) {
+                        addText(`Technologies: ${techs}`, 9, false);
+                    }
+                    y += 2;
+                });
+                y += 5;
+
+                // Experience
+                addText('Professional Experience', 16, true);
+                const experiences = document.querySelectorAll('#experience .bg-white');
+                experiences.forEach(exp => {
+                    const company = exp.querySelector('h3').textContent.trim();
+                    const position = exp.querySelector('h4').textContent.trim();
+                    const date = exp.querySelector('p.text-gray-500').textContent.trim();
+                    const desc = exp.querySelector('p.text-gray-600').textContent.trim();
+                    addText(`${position} at ${company} (${date})`, 12, true);
+                    addText(desc, 10, false);
+                    y += 2;
+                });
+                y += 5;
+
+                // Contact
+                addText('Contact Information', 16, true);
+                const contactItems = document.querySelectorAll('#contact .flex.items-center.space-x-4');
+                contactItems.forEach(item => {
+                    const title = item.querySelector('h4');
+                    const value = item.querySelector('p');
+                    if(title && value) {
+                        addText(`${title.textContent.trim()}: ${value.textContent.trim()}`, 10, false);
+                    }
+                });
+
+                // --- End of text extraction ---
+
+                pdf.save('Michael-Tumuhaise-Resume.pdf');
+            } catch (error) {
+                console.error("Failed to generate PDF:", error);
+                alert("An error occurred while generating the PDF. Please check the console for details.");
+            } finally {
+                downloadBtn.textContent = originalText;
+                downloadBtn.disabled = false;
+            }
         });
     </script>
 </body>
