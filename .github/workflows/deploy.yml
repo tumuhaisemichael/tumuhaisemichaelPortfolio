@@ -1,0 +1,29 @@
+name: Deploy HTML Website to Hostinger
+
+on:
+  push:
+    branches: [ main ]  # Change to 'master' if that's your branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.hostinger.com  # Your Hostinger FTP server
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./  # Deploys everything from repo root
+        server-dir: /public_html/  # Your Hostinger web root
+        # Optional: Exclude files you don't want to upload
+        exclude: |
+          **/.git*
+          **/.github/
+          **/README.md
+          **/.gitignore
+          **/.editorconfig
