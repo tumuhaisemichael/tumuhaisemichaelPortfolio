@@ -1825,40 +1825,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.0/countUp.umd.min.js"></script>
 
     <script>
-        // Dynamic Statistics Calculation
-        function updateStats() {
-            const startYear = 2022;
-            const currentYear = new Date().getFullYear();
-            const expYears = currentYear - startYear + (currentYear === startYear ? 0 : 1);
 
-            // Count actual skill items
-            let techCount = 0;
-            // Select all skill bars (the divs with class 'w-full bg-gray-200...')
-            document.querySelectorAll('#skills .space-y-4 > div').forEach(group => {
-                // Each group has multiple skill items
-                techCount += group.querySelectorAll('.flex.justify-between').length;
-            });
-
-            const projectCount = document.querySelectorAll('.project-card').length;
-
-            const stats = {
-                'Years Experience': expYears,
-                'Projects Completed': projectCount,
-                'Technologies': techCount,
-                'Happy Clients': Math.floor(projectCount * 1.2)
-            };
-
-            document.querySelectorAll('.stat-number').forEach(item => {
-                const label = item.nextElementSibling.innerText.trim();
-                if (stats[label] !== undefined) {
-                    item.setAttribute('data-count', stats[label]);
-                    item.innerText = '0'; // Reset for animation
-                }
-            });
-        }
-
-        // Run immediately to update attributes before AOS/CountUp
-        updateStats();
 
         // Resume Download Logic
         document.getElementById('download-resume-btn').addEventListener('click', function () {
