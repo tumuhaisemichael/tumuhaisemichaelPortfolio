@@ -334,6 +334,75 @@
             background-size: 20px 20px;
         }
 
+        /* Device Mockups */
+        .browser-frame {
+            border-top: 25px solid #e2e8f0;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .browser-frame::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            left: 10px;
+            width: 8px;
+            height: 8px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow: 15px 0 0 #ffbd2e, 30px 0 0 #27c93f;
+        }
+
+        .dark .browser-frame {
+            border-color: #334155;
+        }
+
+        .phone-frame {
+            border: 8px solid #1e293b;
+            border-radius: 32px;
+            overflow: hidden;
+            width: 200px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        /* Project tech orbs */
+        .project-orb {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .project-card:hover .project-orb {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         /* Focus-visible for accessibility */
         a,
         button,
@@ -778,443 +847,374 @@
                         data-filter="marketing">Digital Marketing</button>
                 </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Op Energy -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
-                    data-category="iot" data-aos="fade-up" data-aos-delay="0">
-                    <div class="relative h-56 overflow-hidden bg-blue-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=IoT+Energy+System"
-                            alt="Op Energy System"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Op Energy</h3>
-                            <span
-                                class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs px-2 py-1 rounded-full">IoT</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Real-time energy monitoring system
-                            for
-                            industrial applications using IoT sensors.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">React</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Node.js</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">MQTT</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- E-Logistics -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
-                    data-category="mobile" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-56 overflow-hidden bg-green-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Logistics+App" alt="E-Logistics App"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                E-Logistics</h3>
-                            <span
-                                class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs px-2 py-1 rounded-full">Mobile</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Smart logistics platform for
-                            tracking
-                            deliveries and optimizing routes.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Flutter</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Firebase</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Maps
-                                API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wedding Planner -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
-                    data-category="web" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-56 overflow-hidden bg-purple-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Wedding+Planner" alt="Wedding Planner"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Bliss Planner</h3>
-                            <span
-                                class="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 text-xs px-2 py-1 rounded-full">Web
-                                App</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Comprehensive wedding planning
-                            tool
-                            with budget management and guest tracking.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Vue.js</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Django</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Smart Farming System -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Featured Project: Op Energy (Wide) -->
+                <div class="project-card group lg:col-span-2 bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
                     data-category="iot" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-green-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Smart+Farming"
-                            alt="Smart Farming System"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
+                    <div class="grid md:grid-cols-2">
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                            class="relative overflow-hidden bg-blue-50 dark:bg-gray-800 p-8 flex items-center justify-center">
+                            <!-- Browser Frame Mockup -->
+                            <div class="browser-frame w-full h-full bg-white dark:bg-gray-900 overflow-hidden">
+                                <img src="https://placehold.co/600x400/3b82f6/ffffff?text=IoT+Energy+Console"
+                                    alt="Op Energy Dashboard"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <!-- Tech Orbs -->
+                            <div class="project-orb translate-x-12 -translate-y-12 top-1/2 left-1/4">
+                                <i class="ri-reactjs-line text-[#61DAFB] text-2xl"></i>
+                            </div>
+                            <div class="project-orb -translate-x-12 translate-y-12 bottom-1/4 right-1/4">
+                                <i class="ri-nodejs-line text-[#339933] text-2xl"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="p-8 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span
+                                    class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">IoT
+                                    & SCADA</span>
+                                <span class="flex items-center gap-1 text-green-500 text-xs font-bold">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> LIVE SYSTEM
+                                </span>
+                            </div>
                             <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Smart Farming System</h3>
-                            <span
-                                class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs px-2 py-1 rounded-full">IoT</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">IoT device that collects soil data
-                            (pH, moisture, nutrients) and advises farmers on optimal crops and manure.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Python</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Embedded</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Sensors</span>
+                                class="text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">
+                                Op Energy</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
+                                A high-performance SCADA system for industrial energy monitoring. Leverages real-time
+                                data ingestion for proactive maintenance.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-lg text-gray-600 dark:text-gray-300 font-medium">MQTT</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-lg text-gray-600 dark:text-gray-300 font-medium">TimescaleDB</span>
+                                <span
+                                    class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-lg text-gray-600 dark:text-gray-300 font-medium">WebSockets</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="#"
+                                    class="btn bg-primary text-white px-6 py-2 rounded-xl flex items-center gap-2 hover:bg-secondary">
+                                    <i class="ri-external-link-line"></i> View Project
+                                </a>
+                                <a href="#" class="p-2 text-gray-500 hover:text-primary transition-colors">
+                                    <i class="ri-github-fill text-2xl"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- RouteWise -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                <!-- Secondary Highlight: RouteWise (Tall) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                    data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-full flex flex-col">
+                        <div class="relative bg-orange-50 dark:bg-gray-800 pt-10 px-6 overflow-hidden flex-shrink-0">
+                            <!-- Phone Frame Mockup -->
+                            <div class="phone-frame">
+                                <img src="https://placehold.co/300x600/f97316/ffffff?text=RouteWise+App"
+                                    alt="RouteWise Mobile" class="w-full h-full object-cover">
+                            </div>
+                            <div class="project-orb top-1/3 right-10">
+                                <i class="ri-map-pin-line text-orange-500 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span
+                                    class="bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Machine
+                                    Learning</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">RouteWise</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Intelligent shuttle tracking with predictive route optimization using historical traffic
+                                patterns.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="#"
+                                    class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                                    Case Study <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: E-Logistics & Bliss Planner -->
+            <div class="grid lg:grid-cols-2 gap-8 mt-8">
+                <!-- E-Logistics (Mobile Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
                     data-category="mobile" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-orange-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/f97316/ffffff?text=RouteWise" alt="RouteWise App"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div class="grid md:grid-cols-2 h-full">
+                        <div class="bg-green-50 dark:bg-green-900/10 p-6 flex items-center justify-center relative">
+                            <div class="phone-frame scale-90">
+                                <img src="https://placehold.co/300x600/10b981/ffffff?text=E-Logistics+App"
+                                    alt="E-Logistics Mobile" class="w-full h-full object-cover">
+                            </div>
+                            <div class="project-orb top-10 right-10">
+                                <i class="ri-truck-line text-green-500"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                RouteWise</h3>
-                            <span
-                                class="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 text-xs px-2 py-1 rounded-full">Mobile</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">School shuttle tracking app with
-                            ML for route optimization, displaying live traffic, weather, and crash data.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">React
-                                Native</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Django</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">ML</span>
+                        <div class="p-8 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-[10px] font-bold px-2 py-1 rounded uppercase">Real-time
+                                    Tracking</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">E-Logistics</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Smart logistics platform with live
+                                GPS tracking and AI-driven route optimization.</p>
+                            <div class="flex gap-4 mt-auto">
+                                <a href="#" class="text-primary font-bold text-sm">Case Study</a>
+                                <a href="#" class="text-gray-400 hover:text-primary"><i class="ri-github-fill"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- WonderWedding -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                <!-- Bliss Planner (Web Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
+                    data-category="web" data-aos="fade-up">
+                    <div class="grid md:grid-cols-2 h-full text-left">
+                        <div class="p-8 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-2 py-1 rounded uppercase">SaaS
+                                    Solution</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Bliss Planner</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">A centralized command center for
+                                large-scale events, featuring vendor management and budget automation.</p>
+                            <div class="flex gap-4 mt-auto">
+                                <a href="#" class="text-primary font-bold text-sm">Explore App</a>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900/10 p-6 flex items-center justify-center">
+                            <div class="browser-frame w-full h-40 bg-white">
+                                <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Event+Dashboard"
+                                    alt="Bliss Planner Web" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Smart Farming & WonderWedding & TheShop -->
+            <div class="grid lg:grid-cols-3 gap-8 mt-8">
+                <!-- Smart Farming (IoT Focus) -->
+                <div class="project-card group glass-card rounded-3xl p-8 hover-lift" data-category="iot"
+                    data-aos="fade-up">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-full h-48 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center shadow-inner">
+                            <div class="absolute inset-0 bg-grid-white opacity-20"></div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <i class="ri-pulse-line text-white text-5xl animate-pulse"></i>
+                                <span class="text-white font-mono text-xs mt-2 uppercase tracking-widest">Active Sensor
+                                    Node</span>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex justify-between">
+                                <div class="bg-black/20 backdrop-blur-md px-2 py-1 rounded text-[10px] text-white">pH:
+                                    6.8</div>
+                                <div class="bg-black/20 backdrop-blur-md px-2 py-1 rounded text-[10px] text-white">
+                                    Moist: 42%</div>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Smart Farming</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">IoT-based soil analytic system that
+                            provides precision farming insights via embedded sensors.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-primary font-bold text-sm">System Specs</span>
+                            <i class="ri-microchip-line text-gray-400 group-hover:text-primary transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WonderWedding (Glassmorphism Focus) -->
+                <div class="project-card group bg-gradient-to-br from-pink-500 to-rose-600 rounded-3xl p-1 shadow-2xl hover-lift"
                     data-category="mobile" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-pink-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/ec4899/ffffff?text=WonderWedding" alt="WonderWedding App"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div class="bg-white/10 backdrop-blur-3xl rounded-[22px] h-full p-8 flex flex-col">
+                        <div class="mb-6">
+                            <i class="ri-heart-pulse-fill text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">WonderWedding</h3>
+                        <p class="text-rose-100 text-sm mb-8">Redesigning the wedding experience with seamless
+                            coordination and personalized guest journals.</p>
+                        <div class="mt-auto">
+                            <div class="flex -space-x-3 mb-4">
+                                <div class="w-8 h-8 rounded-full border-2 border-white bg-white/20"></div>
+                                <div class="w-8 h-8 rounded-full border-2 border-white bg-white/40"></div>
+                                <div class="w-8 h-8 rounded-full border-2 border-white bg-white/60"></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                WonderWedding</h3>
-                            <span
-                                class="bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 text-xs px-2 py-1 rounded-full">Mobile</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Complete wedding planning mobile
-                            app that manages budgets, guest lists, schedules, and vendor coordination.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Flutter</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Firebase</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Dart</span>
+                            <a href="#"
+                                class="inline-block bg-white text-rose-600 font-bold px-6 py-2 rounded-xl text-sm hover:bg-rose-50 transition-colors">View
+                                Invitation</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- TheShop E-commerce -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                <!-- TheShop (E-commerce Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
                     data-category="web" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-indigo-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/6366f1/ffffff?text=TheShop" alt="TheShop E-commerce"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div class="relative h-48 bg-gray-100 dark:bg-gray-800 flex items-center justify-center p-8">
+                        <div class="flex gap-4 group-hover:scale-110 transition-transform duration-500">
+                            <div class="w-16 h-20 bg-white rounded-lg shadow-md border border-gray-100"></div>
+                            <div class="w-16 h-20 bg-white rounded-lg shadow-md border border-gray-100 translate-y-4">
                             </div>
+                            <div class="w-16 h-20 bg-white rounded-lg shadow-md border border-gray-100"></div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                            <i class="ri-shopping-bag-3-line text-primary text-4xl"></i>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                TheShop E-commerce</h3>
-                            <span
-                                class="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 text-xs px-2 py-1 rounded-full">Web</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Full-featured e-commerce platform
-                            with cart, checkout, admin panel, and recommendation engine.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">React</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">FastAPI</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">PostgreSQL</span>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">TheShop</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">A lightning-fast storefront built with
+                            React and FastAPI, focused on conversion and UX.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                            <span class="text-[10px] text-gray-500 font-bold uppercase">React Stack</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Matendo Medical System -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+            <!-- Row 4: Medical & Websites & Chatbots -->
+            <div class="grid lg:grid-cols-3 gap-8 mt-8">
+                <!-- Matendo Medical (Clean Dashboard Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
                     data-category="web" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-red-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Matendo+Medical"
-                            alt="Matendo Medical System"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center">
+                                <i class="ri-hospital-line text-red-500 text-2xl"></i>
                             </div>
+                            <span class="text-xs font-bold text-red-500 uppercase">Secure HIPAA</span>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Matendo Medical System</h3>
-                            <span
-                                class="bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-xs px-2 py-1 rounded-full">Web</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Matendo Medical</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Secure patient records and telemedicine
+                            portal connecting healthcare providers with rural users.</p>
+                        <div class="h-1 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500 w-3/4"></div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Connects patients with health
-                            workers and stores personal medical data securely for consultations.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Laravel</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">MySQL</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">PHP</span>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-[10px] text-gray-400">System Integrity</span>
+                            <span class="text-[10px] text-red-500 font-bold">100% Secure</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Custom Websites -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                <!-- Custom Websites (Minimalist Focus) -->
+                <div class="project-card group bg-gray-950 rounded-3xl p-8 hover-lift shadow-2xl overflow-hidden relative"
                     data-category="website" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-teal-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Custom+Websites" alt="Custom Websites"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div
+                        class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/40 transition-colors">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-white mb-4">Agency Portfolio Stack</h3>
+                        <p class="text-gray-400 text-sm mb-8">Bespoke digital experiences for NGOs, Tourism, and
+                            Education. Focus on brand identity and performance.</p>
+                        <div class="space-y-3 mt-auto">
+                            <div class="flex items-center gap-3 text-white/60 text-xs">
+                                <i class="ri-checkbox-circle-line text-primary"></i> 95+ PageSpeed Score
+                            </div>
+                            <div class="flex items-center gap-3 text-white/60 text-xs">
+                                <i class="ri-checkbox-circle-line text-primary"></i> SEO Targeted
                             </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Custom Websites</h3>
-                            <span
-                                class="bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 text-xs px-2 py-1 rounded-full">Websites</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Professional websites developed
-                            for educational institutions, NGOs, startups, and tourism firms.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Laravel</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">WordPress</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">React</span>
-                        </div>
+                        <a href="#" class="mt-8 text-primary font-bold text-sm">View Client List</a>
                     </div>
                 </div>
 
-                <!-- AI Chatbots -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+                <!-- AI Chatbots (Interface Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
                     data-category="chatbot" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-cyan-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/06b6d4/ffffff?text=AI+Chatbots" alt="AI Chatbots"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
-                            </div>
+                    <div class="p-8 bg-gray-50 dark:bg-gray-800/50 flex flex-col gap-4">
+                        <div class="flex justify-end">
+                            <div
+                                class="bg-primary text-white text-[10px] px-3 py-2 rounded-2xl rounded-tr-none shadow-md">
+                                How can I help you?</div>
+                        </div>
+                        <div class="flex justify-start">
+                            <div
+                                class="bg-white dark:bg-gray-700 text-gray-700 dark:text-white text-[10px] px-3 py-2 rounded-2xl rounded-tl-none shadow-sm">
+                                I need to track my order.</div>
+                        </div>
+                        <div class="flex justify-end">
+                            <div
+                                class="bg-primary/20 text-primary text-[10px] font-bold px-3 py-1 rounded-full animate-bounce">
+                                ...</div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                AI Chatbots</h3>
-                            <span
-                                class="bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300 text-xs px-2 py-1 rounded-full">Chatbot</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">Customer service bots for
-                            education, business, and information services integrated into websites and apps.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Python</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Dialogflow</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">BotPress</span>
+                    <div class="p-8 pt-4">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cognitive Bots</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">NLU-powered customer assistants that
+                            resolve 70% of frequent queries autonomously.</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center"><i
+                                    class="ri-robot-line text-cyan-600 text-xs"></i></div>
+                            <span class="text-[10px] text-gray-400">Dialogflow / Python</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Digital Marketing Campaigns -->
-                <div class="project-card group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover-lift transition-all border border-gray-100 dark:border-gray-800"
+            <!-- Row 5: Digital Marketing (Full Width) -->
+            <div class="mt-8">
+                <!-- Digital Marketing (Analytics Focus) -->
+                <div class="project-card group bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 overflow-hidden hover-lift"
                     data-category="marketing" data-aos="fade-up">
-                    <div class="relative h-56 overflow-hidden bg-amber-50 dark:bg-gray-800">
-                        <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Digital+Marketing"
-                            alt="Digital Marketing"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-github-fill ri-lg"></i></a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
-                                        class="ri-external-link-line ri-lg"></i></a>
+                    <div class="grid lg:grid-cols-3">
+                        <div class="lg:col-span-2 p-10 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span
+                                    class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600"><i
+                                        class="ri-line-chart-line text-xl"></i></span>
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Growth & Performance
+                                    Marketing</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">Driving business results through
+                                data-backed SEO campaigns, precision search engine marketing, and conversion rate
+                                optimization (CRO).</p>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <div class="text-2xl font-black text-primary">150%</div>
+                                    <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Organic
+                                        Growth</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-primary">Top 3</div>
+                                    <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Search
+                                        Ranking</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-black text-primary">2.4x</div>
+                                    <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Ad ROI
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                                Digital Marketing</h3>
-                            <span
-                                class="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-xs px-2 py-1 rounded-full">Marketing</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">SEO optimization, keyword
-                            research, and Google Search Console integration for improved online visibility.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">SEO</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Analytics</span>
-                            <span
-                                class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Google
-                                Ads</span>
+                        <div class="bg-amber-50 dark:bg-amber-900/10 p-10 relative flex items-end">
+                            <div class="w-full flex items-end gap-1">
+                                <div
+                                    class="w-full bg-amber-200 h-12 rounded-t-lg group-hover:h-24 transition-all duration-700">
+                                </div>
+                                <div
+                                    class="w-full bg-amber-300 h-24 rounded-t-lg group-hover:h-40 transition-all duration-700">
+                                </div>
+                                <div
+                                    class="w-full bg-amber-400 h-32 rounded-t-lg group-hover:h-16 transition-all duration-700">
+                                </div>
+                                <div
+                                    class="w-full bg-amber-500 h-40 rounded-t-lg group-hover:h-48 transition-all duration-700">
+                                </div>
+                                <div
+                                    class="w-full bg-primary h-20 rounded-t-lg group-hover:h-56 transition-all duration-700">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
