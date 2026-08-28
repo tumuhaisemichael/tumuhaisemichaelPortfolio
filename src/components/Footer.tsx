@@ -123,7 +123,7 @@ export default function Footer() {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         aria-label="Back to top"
         className={`fixed bottom-8 right-8 w-12 h-12 rounded-full shadow-xl
-                    bg-gradient-to-br from-teal-500 to-teal-700 text-white
+                    bg-primary text-white dark:text-teal-950 hover:brightness-95
                     flex items-center justify-center z-50 cursor-pointer
                     transition-all duration-300 hover:scale-110 ${
                       visible
