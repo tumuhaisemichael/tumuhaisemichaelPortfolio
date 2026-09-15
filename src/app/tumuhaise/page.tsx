@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "TUMUHAISE MICHAEL ANOLD - CV / Resume",
   description: "Detailed Curriculum Vitae of Tumuhaise Michael Anold, Software Engineer based in Kampala, Uganda.",
 };

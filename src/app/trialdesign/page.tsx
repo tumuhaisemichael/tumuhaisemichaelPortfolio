@@ -40,6 +40,7 @@ import {
   siArduino,
   siBootstrap,
 } from "simple-icons";
+import CareerBook from "./CareerBook";
 import styles from "./trialdesign.module.css";
 
 export const metadata: Metadata = {
@@ -632,6 +633,19 @@ export default function TrialDesignPage() {
             </article>
           ))}
         </div>
+      </section>
+      <section className={styles.career} id="experience" aria-labelledby="career-title">
+        <div className={styles.careerHeading}>
+          <p className={styles.careerEyebrow}>04 / Career path</p>
+          <h2 id="career-title">Professional<br /><span>Milestones.</span></h2>
+          <div className={styles.careerIntro}>
+            <span aria-hidden="true">↗</span>
+            <p>My career journey and the companies I&apos;ve had the pleasure to work with.</p>
+          </div>
+        </div>
+
+        <CareerBook />
+        <div className={styles.careerClosing}><span>Built on experience. Driven by curiosity.</span><a href="#top">Back to top ↑</a></div>
       </section>
     </main>
   );
