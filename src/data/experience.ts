@@ -12,6 +12,18 @@ export interface Exp {
 
 export const experiences: Exp[] = [
   {
+    period: "2026 – Present",
+    role: "Software Developer",
+    company: "Baisoft Tech",
+    description:
+      "Building software with Next.js on the frontend and Django on the backend, while developing mobile experiences with React Native, Flutter, and Firebase.",
+    tags: ["Next.js", "Django", "React Native", "Flutter", "Firebase"],
+    icon: "ri-code-s-slash-line",
+    dotColor: "bg-slate-900",
+    accentColor: "text-slate-900",
+    accentBg: "bg-slate-100 dark:bg-slate-800",
+  },
+  {
     period: "2025 – Present",
     role: "Web Developer",
     company: "Afrisoft Ltd",
@@ -72,4 +84,3 @@ export const experiences: Exp[] = [
     accentBg: "bg-teal-50 dark:bg-teal-950/30",
   },
 ];
-

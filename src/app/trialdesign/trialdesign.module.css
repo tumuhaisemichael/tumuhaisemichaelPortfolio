@@ -14,22 +14,26 @@
 }
 
 .header {
-  position: relative;
-  z-index: 4;
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 68px;
   padding: 0 clamp(1.8rem, 4.3vw, 5rem);
+  pointer-events: none;
 }
 
-.navigationGroup,
-.nav {
+.navigationGroup {
   display: flex;
   align-items: center;
 }
 
 .navigationGroup { gap: clamp(1.2rem, 2.6vw, 3rem); }
+.navigationGroup, .callLink, .centerNav { pointer-events: auto; }
 
 .mark {
   display: grid;
@@ -37,24 +41,44 @@
   height: 25px;
   place-items: center;
   border-radius: 7px;
-  background: #222;
-  color: #fff;
+  background: #fff;
+  color: #222;
   font-size: .48rem;
   font-weight: 700;
   letter-spacing: -.08em;
 }
 
-.nav { gap: clamp(1rem, 1.65vw, 2rem); }
-
-.nav a,
 .callLink {
+  padding: .45rem .6rem;
+  background: #f8f8f8;
   color: #222;
   font-size: clamp(.56rem, .65vw, .7rem);
   text-decoration: none;
   transition: opacity .18s ease;
 }
 
-.nav a:hover,
+.sectionMenu { position: relative; }
+.menuTrigger { display: flex; min-width: 10.75rem; align-items: center; gap: .65rem; border: 1px solid #222; padding: .42rem .55rem; background: #222; color: #fff; cursor: pointer; font: inherit; text-align: left; box-shadow: 3px 3px 0 #00000014; }
+.menuKicker { padding-right: .55rem; border-right: 1px solid #666; color: #aaa; font-size: .52rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.menuCurrent { display: flex; flex: 1; align-items: baseline; gap: .35rem; font-size: .62rem; }
+.menuCurrent b { color: #aaa; font-size: .52rem; font-weight: 500; }
+.menuTrigger > i, .menuTrigger > i::after { display: block; width: .8rem; height: 1px; background: #fff; content: ""; transition: transform .2s ease; }
+.menuTrigger > i::after { transform: translateY(4px); }
+.menuTrigger > i.menuOpen { transform: rotate(45deg); }
+.menuTrigger > i.menuOpen::after { transform: rotate(-90deg); }
+.menuPanel { position: absolute; top: calc(100% + 1rem); left: 0; z-index: 20; display: grid; width: min(22rem, calc(100vw - 3rem)); max-height: 0; overflow: hidden; border: 1px solid transparent; background: #222; box-shadow: 0 0 0 #222; opacity: 0; pointer-events: none; transform: translateY(-.5rem); transition: opacity .2s ease, transform .2s ease, max-height .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.menuPanelOpen { max-height: 26rem; border-color: #666; box-shadow: 7px 7px 0 #bcbcbc; opacity: 1; pointer-events: auto; transform: translateY(0); }
+.menuPanelTop { display: flex; justify-content: space-between; padding: .8rem 1rem; border-bottom: 1px solid #4d4d4d; color: #aaa; font-size: .52rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.menuPanel a { display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: .6rem; padding: .9rem 1rem; border-bottom: 1px solid #414141; color: #fff; font-size: .78rem; text-decoration: none; transition: background .18s ease, color .18s ease; }
+.menuPanel a:last-child { border-bottom: 0; }
+.menuPanel a small { color: #aaa; font-size: .55rem; }
+.menuPanel a b { font-weight: 400; }
+.menuPanel a:hover, .menuPanel a.menuActive { background: #f0f1f1; color: #222; }
+.menuPanel a:hover small, .menuPanel a.menuActive small { color: #777; }
+.centerNav { position: absolute; left: 50%; display: flex; align-items: center; gap: clamp(.3rem, .8vw, .8rem); transform: translateX(-50%); }
+.centerNav a { display: inline-flex; padding: .42rem .52rem; color: #222; font-size: calc(.62rem + 7px); text-decoration: none; transition: background .2s ease, color .2s ease; }
+.centerNav a:hover, .centerNav a:focus-visible { background: #222; color: #fff; outline: 0; }
+
 .callLink:hover { opacity: .52; }
 
 .callLink { text-decoration: underline; text-underline-offset: 3px; }
@@ -656,7 +680,11 @@
 
 @media (max-width: 780px) {
   .header { height: 62px; padding: 0 1.4rem; }
-  .nav { display: none; }
+  .callLink { display: none; }
+  .centerNav { display: none; }
+  .navigationGroup { width: 100%; justify-content: space-between; }
+  .menuTrigger { min-width: 9.5rem; }
+  .menuPanel { right: 0; left: auto; width: min(22rem, calc(100vw - 2.8rem)); }
   .sideRail { display: none; }
   .heroCopy { top: 33%; left: 1.5rem; transform: none; }
   .stats { top: 15%; left: 1.5rem; }
@@ -1382,4 +1410,68 @@
   .careerIntro { grid-column: auto; }
   .careerIntro p { max-width: 24rem; }
   .careerClosing { align-items: start; flex-direction: column; }
+}
+
+/* Closing contact sheet and footer: a dark invitation followed by a compact sign-off. */
+.contact { padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 7vw, 9rem); background: #222; color: #f8f8f8; }
+.contactTopline { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid #505050; color: #bcbcbc; font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.contactGrid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(3rem, 9vw, 12rem); padding-top: clamp(3rem, 6vw, 7rem); }
+.contactInvitation { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
+.contactMark { margin: 0 0 1.4rem; color: #d5d5d5; font-size: 1.7rem; line-height: 1; }
+.contactInvitation h2 { margin: 0; max-width: 50rem; font-size: clamp(3.5rem, 7.5vw, 8.5rem); font-weight: 400; line-height: .86; letter-spacing: -.07em; }
+.contactInvitation h2 em { color: #858585; font-style: normal; }
+.contactInvitation > p:not(.contactMark) { max-width: 25rem; margin: 2rem 0 1.8rem; color: #bcbcbc; font-size: .9rem; line-height: 1.65; }
+.emailLink { display: inline-flex; align-items: center; gap: 1.5rem; padding-bottom: .45rem; border-bottom: 1px solid #bcbcbc; color: #fff; font-size: clamp(.85rem, 1.25vw, 1.1rem); text-decoration: none; }
+.emailLink span { font-size: 1.3rem; transition: transform .2s ease; }
+.emailLink:hover span { transform: translate(3px, -3px); }
+.contactFacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; margin: auto 0 0; padding-top: 4rem; gap: 1rem; }
+.contactFacts div { border-top: 1px solid #505050; padding-top: .8rem; }
+.contactFacts dt { margin-bottom: .5rem; color: #8d8d8d; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; }
+.contactFacts dd { margin: 0; color: #eee; font-size: .68rem; overflow-wrap: anywhere; }
+.contactFacts a { color: inherit; text-decoration: none; }
+.contactFacts a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contactFormShell { align-self: stretch; background: #f0f1f1; color: #222; }
+.contactForm, .contactSuccess { display: flex; min-height: 100%; flex-direction: column; padding: clamp(1.5rem, 3vw, 3rem); }
+.formHeading { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem; }
+.formHeading span { font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.formHeading p { margin: 0; color: #626262; font-size: .7rem; }
+.contactForm label { display: grid; gap: .6rem; margin-bottom: 1.2rem; color: #626262; font-size: .6rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.contactForm input, .contactForm textarea { width: 100%; border: 0; border-bottom: 1px solid #b8baba; outline: 0; padding: .55rem 0; border-radius: 0; background: transparent; color: #222; font: inherit; font-size: .9rem; font-weight: 400; letter-spacing: 0; text-transform: none; resize: vertical; transition: border-color .2s ease; }
+.contactForm input:focus, .contactForm textarea:focus { border-color: #222; }
+.contactForm textarea { min-height: 6rem; line-height: 1.55; }
+.contactForm input::placeholder, .contactForm textarea::placeholder { color: #888; }
+.contactForm button, .contactSuccess button { margin-top: auto; border: 1px solid #222; padding: .85rem 1rem; background: #222; color: #fff; cursor: pointer; font: inherit; font-size: .7rem; font-weight: 600; transition: background .2s ease, color .2s ease; }
+.contactForm button:hover:not(:disabled), .contactSuccess button:hover { background: transparent; color: #222; }
+.contactForm button:disabled { cursor: wait; opacity: .6; }
+.formError { margin: 0 0 1rem; color: #8f2020; font-size: .7rem; line-height: 1.5; }
+.contactSuccess { align-items: flex-start; justify-content: center; }
+.contactSuccess > span { display: grid; width: 3.5rem; height: 3.5rem; margin-bottom: 1.5rem; place-items: center; border: 1px solid #222; border-radius: 50%; font-size: 1.5rem; }
+.contactSuccess p { margin: 0 0 .5rem; font-size: 1.7rem; letter-spacing: -.04em; }
+.contactSuccess small { color: #626262; font-size: .8rem; }
+.contactSuccess button { width: 100%; margin-top: 3rem; }
+.contact a:focus-visible, .contact button:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+.contactForm input:focus-visible, .contactForm textarea:focus-visible { outline: 2px solid #222; outline-offset: 3px; }
+
+.footer { overflow: hidden; padding: 1.5rem clamp(1.5rem, 7vw, 9rem) 1.7rem; background: #161616; color: #eee; }
+.footerTop { display: grid; grid-template-columns: .5fr 1fr 1fr; gap: 2rem; align-items: start; padding: 1rem 0 4rem; }
+.footerMark { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: .4rem; background: #eee; color: #161616; font-size: .6rem; font-weight: 700; text-decoration: none; }
+.footerTop > p { margin: 0; color: #aaa; font-size: .72rem; line-height: 1.6; }
+.footerSocials { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.2rem; }
+.footerSocials a, .footerBottom a { color: #eee; font-size: .68rem; text-decoration: none; }
+.footerSocials a:hover, .footerBottom a:hover { color: #999; }
+.footerWordmark { display: flex; flex-direction: column; border-top: 1px solid #444; padding: clamp(1.5rem, 4vw, 4rem) 0; font-size: clamp(4rem, 14.4vw, 16rem); font-weight: 400; line-height: .74; letter-spacing: -.1em; }
+.footerWordmark span:last-child { align-self: flex-end; color: #777; }
+.footerBottom { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #444; padding-top: 1rem; color: #888; font-size: .6rem; }
+.footerBottom a { color: #bbb; }
+@media (max-width: 850px) {
+  .contactGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .contactFacts { margin-top: 1rem; padding-top: 2.5rem; }
+}
+@media (max-width: 560px) {
+  .contactTopline { flex-direction: column; }
+  .contactFacts { grid-template-columns: 1fr; gap: 1rem; }
+  .footerTop { grid-template-columns: auto 1fr; }
+  .footerSocials { grid-column: 1 / -1; justify-content: flex-start; }
+  .footerWordmark { font-size: clamp(3.5rem, 18vw, 6rem); }
+  .footerBottom { flex-wrap: wrap; }
 }

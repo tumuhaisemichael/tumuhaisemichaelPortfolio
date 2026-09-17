@@ -41,6 +41,8 @@ import {
   siBootstrap,
 } from "simple-icons";
 import CareerBook from "./CareerBook";
+import SectionMenu, { type SectionMenuItem } from "./SectionMenu";
+import TrialContact from "./TrialContact";
 import styles from "./trialdesign.module.css";
 
 export const metadata: Metadata = {
@@ -48,7 +50,6 @@ export const metadata: Metadata = {
   description: "Portfolio of Michael Tumuhaise, Full Stack Software Engineer.",
 };
 
-const navigation = ["About me", "Projects", "Services", "Notes"];
 const technologies = [
   { name: "React", icon: siReact },
   { name: "Next.js", icon: siNextdotjs },
@@ -58,6 +59,13 @@ const technologies = [
   { name: "PostgreSQL", icon: siPostgresql },
   { name: "Git", icon: siGit },
   { name: "GitHub", icon: siGithub },
+];
+const sectionNavigation: SectionMenuItem[] = [
+  { label: "About", href: "#about-me", number: "01", icon: "ri-user-3-line" },
+  { label: "Capabilities", href: "#services", number: "02", icon: "ri-stack-line" },
+  { label: "Work", href: "#projects", number: "03", icon: "ri-layout-grid-line" },
+  { label: "Career", href: "#experience", number: "04", icon: "ri-git-branch-line" },
+  { label: "Contact", href: "#contact", number: "05", icon: "ri-mail-send-line" },
 ];
 
 const capabilityGroups = [
@@ -377,12 +385,11 @@ export default function TrialDesignPage() {
         <header className={styles.header}>
           <div className={styles.navigationGroup}>
             <a className={styles.mark} href="#top" aria-label="Michael Tumuhaise home">MT</a>
-            <nav className={styles.nav} aria-label="Primary navigation">
-              {navigation.map((item) => (
-                <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`}>{item}</a>
-              ))}
-            </nav>
+            <SectionMenu sections={sectionNavigation} />
           </div>
+          <nav className={styles.centerNav} aria-label="Primary navigation">
+            {sectionNavigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          </nav>
           <a className={styles.callLink} href="mailto:michaeltumuhaise11@gmail.com">Book a call ↗</a>
         </header>
 
@@ -647,6 +654,20 @@ export default function TrialDesignPage() {
         <CareerBook />
         <div className={styles.careerClosing}><span>Built on experience. Driven by curiosity.</span><a href="#top">Back to top ↑</a></div>
       </section>
+      <TrialContact />
+      <footer className={styles.footer}>
+        <div className={styles.footerTop}>
+          <a className={styles.footerMark} href="#top" aria-label="Back to top">MT</a>
+          <p>Full stack software engineer<br />Kampala, Uganda</p>
+          <div className={styles.footerSocials}>
+            <a href="https://github.com/tumuhaisemichael" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/tumuhaise-michael-225515352/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="/tumuhaise">Résumé <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div className={styles.footerWordmark}><span>MICHAEL</span><span>TUMUHAISE</span></div>
+        <div className={styles.footerBottom}><span>© 2026 Michael Tumuhaise</span><span>Built with intention</span><a href="#top">Back to top ↑</a></div>
+      </footer>
     </main>
   );
 }

@@ -18,6 +18,16 @@ export interface CompanyDetails {
 // Company context is separate from the shared career history so the original
 // homepage keeps its existing content. Headlines are editorial, not brand slogans.
 export const companyDetails: Record<string, CompanyDetails> = {
+  "Baisoft Tech": {
+    sector: "Product engineering",
+    headline: "Systems built to move.",
+    context:
+      "A product-focused software team where web and mobile engineering meet dependable delivery.",
+    websiteUrl: "https://baisoftglobal.com/",
+    websiteLabel: "baisoftglobal.com",
+    initials: "BT",
+    visual: "software",
+  },
   "Afrisoft Ltd": {
     sector: "Software & digital products",
     headline: "Ideas, made useful.",
@@ -41,12 +51,10 @@ export const companyDetails: Record<string, CompanyDetails> = {
   "Tattuintel Ltd": {
     sector: "Mobile & intelligent systems",
     headline: "Connecting the moving parts.",
-    // Context and project link come from the existing portfolio. This is a
-    // project repository, not an unverified company website.
     context:
       "Mobile and web solutions bringing software and machine learning into logistics and event planning.",
-    websiteUrl: "https://github.com/TTatuIntel/Matendo",
-    websiteLabel: "Explore Matendo on GitHub",
+    websiteUrl: "https://tattuintel.com/",
+    websiteLabel: "tattuintel.com",
     initials: "TI",
     visual: "network",
   },
@@ -55,8 +63,8 @@ export const companyDetails: Record<string, CompanyDetails> = {
     headline: "Digital services. Human impact.",
     context:
       "Uganda’s national authority coordinating IT development and enabling digital government services.",
-    websiteUrl: "https://nita.go.ug/",
-    websiteLabel: "nita.go.ug",
+    websiteUrl: "https://www.nita.go.ug/",
+    websiteLabel: "www.nita.go.ug",
     initials: "NU",
     visual: "civic",
   },

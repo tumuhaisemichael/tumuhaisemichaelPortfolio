@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "Michael Tumuhaise is a Full Stack Software Engineer in Kampala, Uganda. Specialising in Web, Mobile, IoT and AI/ML. Available for freelance, remote and full-time work.",
   keywords:
     "Michael Tumuhaise, Tumuhaise Michael, Full Stack Developer Uganda, React Developer, Node.js, Django, Flutter, AI Engineer, Mobile App Developer",
+  icons: {
+    icon: [{ url: "/Michael-hero-portrait-cutout-v2.png", type: "image/png" }],
+    shortcut: "/Michael-hero-portrait-cutout-v2.png",
+  },
   openGraph: {
     title: "Michael Tumuhaise — Full Stack Software Engineer",
     description:
