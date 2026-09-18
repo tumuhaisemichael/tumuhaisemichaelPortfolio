@@ -164,6 +164,24 @@
   font-size: clamp(.65rem, .85vw, .88rem);
 }
 
+.heroResume {
+  position: absolute;
+  top: calc(100% + clamp(4rem, 7vh, 6.5rem));
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: .65rem .8rem;
+  background: #222;
+  color: #fff;
+  font-size: .68rem;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.heroResume:hover { background: #fff; color: #222; outline: 1px solid #222; transform: translateY(-2px); }
+.heroResume:focus-visible { outline: 2px solid #222; outline-offset: 4px; }
+
 .portrait {
   position: absolute;
   z-index: 2;
@@ -174,8 +192,8 @@
 }
 
 .portraitImage {
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center;
 }
 
 .scrollCue {
@@ -299,7 +317,7 @@
   background: #e9e9e9;
 }
 
-.aboutPortraitImage { object-fit: contain; object-position: center bottom; }
+.aboutPortraitImage { object-fit: cover; object-position: center; }
 
 .aboutPortrait span {
   position: absolute;
@@ -467,8 +485,7 @@
 
 .aboutPortraitImage {
   z-index: 1;
-  transform: translateY(-1.15rem) scale(1.03);
-  transform-origin: center bottom;
+  transform: none;
 }
 
 .aboutPortrait span { z-index: 2; }
@@ -690,6 +707,7 @@
   .stats { top: 15%; left: 1.5rem; }
   .heroCopy h1 { font-size: clamp(7.3rem, 31vw, 12rem); }
   .heroCopy > p { position: static; width: auto; margin-top: 1.4rem; }
+  .heroResume { position: static; margin-top: 1.4rem; }
   .portrait { right: -1rem; width: 88vw; height: 57vh; }
   .scrollCue { bottom: 2rem; left: 1.5rem; }
   .about { padding: 5rem 1.5rem 4rem; }

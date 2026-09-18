@@ -407,11 +407,12 @@ export default function TrialDesignPage() {
         <section className={styles.heroCopy} aria-labelledby="hero-title">
           <h1 id="hero-title">Hello.</h1>
           <p>— I&apos;m Michael, a full stack developer.</p>
+          <a className={styles.heroResume} href="/tumuhaise">View résumé <span aria-hidden="true">↗</span></a>
         </section>
 
         <div className={styles.portrait}>
           <Image
-            src="/Michael-hero-portrait-cutout-v2.png"
+            src="/michael.png"
             alt="Michael Tumuhaise"
             fill
             priority
@@ -463,7 +464,7 @@ export default function TrialDesignPage() {
 
           <div className={styles.aboutPortrait}>
             <Image
-              src="/Michael-hero-portrait-cutout-v2.png"
+              src="/michael.png"
               alt="Michael Tumuhaise"
               fill
               sizes="(max-width: 780px) 100vw, 32vw"

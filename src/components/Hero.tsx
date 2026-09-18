@@ -130,6 +130,13 @@ export default function Hero() {
                 <i className="ri-arrow-right-line" />
               </button>
               <a
+                href="/tumuhaise"
+                className="btn-ghost px-8 py-4 text-base cursor-pointer"
+              >
+                View Résumé
+                <i className="ri-file-user-line" />
+              </a>
+              <a
                 href="/Michael-Tumuhaise-Software-Engineer-Resume.pdf"
                 download
                 className="btn-ghost px-8 py-4 text-base cursor-pointer"

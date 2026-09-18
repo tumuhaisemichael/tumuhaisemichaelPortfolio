@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   keywords:
     "Michael Tumuhaise, Tumuhaise Michael, Full Stack Developer Uganda, React Developer, Node.js, Django, Flutter, AI Engineer, Mobile App Developer",
   icons: {
-    icon: [{ url: "/Michael-hero-portrait-cutout-v2.png", type: "image/png" }],
-    shortcut: "/Michael-hero-portrait-cutout-v2.png",
+    icon: [{ url: "/michael.png", type: "image/png" }],
+    shortcut: "/michael.png",
   },
   openGraph: {
     title: "Michael Tumuhaise — Full Stack Software Engineer",
