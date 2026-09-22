@@ -48,6 +48,7 @@ import styles from "./trialdesign.module.css";
 export const metadata: Metadata = {
   title: "Michael Tumuhaise — Full Stack Software Engineer",
   description: "Portfolio of Michael Tumuhaise, Full Stack Software Engineer.",
+  alternates: { canonical: "/" },
 };
 
 const technologies = [
@@ -401,7 +402,7 @@ export default function TrialDesignPage() {
 
         <div className={styles.stats}>
           <div><strong>19+</strong><span>Projects completed</span></div>
-          <div><strong>4+</strong><span>Years building</span></div>
+          <div><strong>6+</strong><span>Years experience</span></div>
         </div>
 
         <section className={styles.heroCopy} aria-labelledby="hero-title">

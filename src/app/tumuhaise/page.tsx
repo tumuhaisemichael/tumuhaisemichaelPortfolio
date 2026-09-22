@@ -47,6 +47,7 @@ const technologyFallbackIcons: Record<string, string> = {
 export const metadata: Metadata = {
   title: "Tumuhaise Michael — Résumé",
   description: "Résumé of Tumuhaise Michael, Software Engineer based in Kampala, Uganda.",
+  alternates: { canonical: "/tumuhaise" },
 };
 
 export default function ResumePage() {

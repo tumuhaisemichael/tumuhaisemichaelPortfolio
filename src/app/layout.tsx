@@ -15,6 +15,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tumuhaise.com"),
   title: "Michael Tumuhaise — Full Stack Software Engineer",
   description:
     "Michael Tumuhaise is a Full Stack Software Engineer in Kampala, Uganda. Specialising in Web, Mobile, IoT and AI/ML. Available for freelance, remote and full-time work.",
@@ -24,13 +25,40 @@ export const metadata: Metadata = {
     icon: [{ url: "/michael.png", type: "image/png" }],
     shortcut: "/michael.png",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: "Michael Tumuhaise — Full Stack Software Engineer",
     description:
       "Software Engineer specialising in high-performance web platforms, cross-platform mobile apps, IoT systems and AI/ML solutions.",
     url: "https://tumuhaise.com",
     type: "website",
+    images: [{ url: "/michael.png", width: 1207, height: 1303, alt: "Michael Tumuhaise" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michael Tumuhaise — Full Stack Software Engineer",
+    description: "Software Engineer specialising in high-performance web platforms, cross-platform mobile apps, IoT systems and AI/ML solutions.",
+    images: ["/michael.png"],
+  },
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Michael Tumuhaise",
+  url: "https://tumuhaise.com",
+  image: "https://tumuhaise.com/michael.png",
+  jobTitle: "Full Stack Software Engineer",
+  email: "mailto:michaeltumuhaise11@gmail.com",
+  address: { "@type": "PostalAddress", addressLocality: "Kampala", addressCountry: "UG" },
+  sameAs: [
+    "https://github.com/tumuhaisemichael",
+    "https://www.linkedin.com/in/tumuhaise-michael-225515352/",
+  ],
 };
 
 export default function RootLayout({
@@ -49,6 +77,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
           rel="stylesheet"
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </head>
       <body className="page-gradient min-h-full flex flex-col">{children}</body>
     </html>
