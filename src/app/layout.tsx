@@ -22,8 +22,9 @@ export const metadata: Metadata = {
   keywords:
     "Michael Tumuhaise, Tumuhaise Michael, Full Stack Developer Uganda, React Developer, Node.js, Django, Flutter, AI Engineer, Mobile App Developer",
   icons: {
-    icon: [{ url: "/michael.png", type: "image/png" }],
-    shortcut: "/michael.png",
+    icon: [{ url: "/michael-icon.png", type: "image/png", sizes: "512x512" }],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/michael-icon.png", sizes: "512x512", type: "image/png" }],
   },
   robots: {
     index: true,
