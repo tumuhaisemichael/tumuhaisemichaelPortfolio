@@ -249,8 +249,8 @@
   .topline { margin-bottom: 1.5rem; }
 }
 
-/* Compact screens keep both pieces in reading order, with a gentle hinge gesture. */
-@media (max-width: 760px), (max-height: 640px) {
+/* Narrow screens keep both pieces in reading order, with a gentle hinge gesture. */
+@media (max-width: 760px) {
   .guide { flex-wrap: wrap; }
   .scrollHint { display: none; }
   .chapters::before { left: 0; }
@@ -269,6 +269,20 @@
   .companyDetails a { clear: both; }
   .leaf { margin-left: 0; width: 100%; transform: rotateY(var(--mobile-turn, 0deg)); }
   .back, .castShadow { display: none; }
+}
+
+/* Short laptop screens retain the full page turn with a tighter sticky stage. */
+@media (min-width: 761px) and (max-height: 640px) {
+  .stage { top: 1svh; padding-top: 2.5rem; padding-bottom: 1rem; }
+  .face { padding: 1.25rem; }
+  .topline { margin-bottom: 1rem; }
+  .description { margin: .85rem 0 1rem; line-height: 1.5; }
+  .folio { margin-top: 1rem; padding-top: .65rem; }
+  .artwork { margin: .4rem 0 .5rem; }
+  .artwork svg { height: 90px; }
+  .companyDetails h4 { margin: .4rem 0 .5rem; }
+  .companyDetails p { margin-bottom: .65rem; line-height: 1.45; }
+  .previewViewport { min-height: 210px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
